@@ -7,13 +7,13 @@
 		<script src="/public/scripts/tj.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<div class="demo" data-img="//www.hanswu.com/public/images/logo.png" data-content="Hello World" data-title="<span style='color:red'>Hello</span>">
+		<div class="demo" data-img="//www.hanswu.com/public/images/logo.png" data-content="Hello World<br/><span id='closeit'>closeIt</span>" data-title="<span style='color:red'>Hello</span>">
 aaaa
 		</div>
 		<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="jquery.opener.js"></script>
 		<script>
-			$('.demo').opener()
+			$('.demo').opener({closeDom:"#closeit"})
 		</script>
 	</body>
 </html>
