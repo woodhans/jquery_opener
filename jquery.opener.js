@@ -1,5 +1,5 @@
 /*! author Hans.Wu http://www.hanswu.com
- * project: https://github.com/woodhans/opener
+ * project: https://github.com/woodhans/jquery_opener
  require jquery 1.6+*/
 (function($,window,document){
 	var Opener=function(){
@@ -103,13 +103,12 @@
 		}
 	};
 	$.fn.opener=function(options){
-		if(typeof (this.data().overflow) =="string" && /^\{+[x|y]:[scroll|hidden|auto|visible|inherit|overlay|initial]+(,[x|y]:[scroll|hidden|auto|visible|inherit|overlay|initial]+)?\}$/.test(this.data().overflow)) this.data().overflow=eval("("+this.data().overflow+")");
 		options=$.extend({},$.fn.opener.options,this.data(),options);
 		if(options.id=="") options.id=_randomString(4,8);
 		options.action=options.action.toLowerCase();
 		if(options.action=="hover") options.action="mouseover";
 		if(typeof (options.img) =="string" && options.img.indexOf(",")>1) options.img=options.img.split(",");
-
+		if(typeof (options.overflow) =="string" && /^\{+[x|y]:[scroll|hidden|auto|visible|inherit|overlay|initial]+(,[x|y]:[scroll|hidden|auto|visible|inherit|overlay|initial]+)?\}$/.test(options.overflow)) options.overflow=eval("("+options.overflow+")");
 		options.align=options.align.toUpperCase();
 		if(typeof(options.radius)=="number" &&options.radius>0) options.radius=options.radius+"px";
 		if(typeof(options.width)=="number" &&options.width>0) options.width=options.width+"px";
